@@ -20,7 +20,7 @@
 # include_recipe "ban"
 
 # uncomment to use the sidekiq recipe. See cookbooks/sidekiq/readme.md for documentation.
-# include_recipe "sidekiq"
+include_recipe "sidekiq"
 
 #uncomment to turn on memcached
 include_recipe "memcached"
@@ -131,7 +131,7 @@ if ['solo','db_master', 'db_slave'].include?(node[:instance_role])
   postgresql9_btree_gist "activeadvocacytools"
   postgresql9_chkpass "activeadvocacytools"
   postgresql9_citext "activeadvocacytools"
-#   postgresql9_cube "activeadvocacytools"
+  postgresql9_cube "activeadvocacytools"
 #   postgresql9_dblink "activeadvocacytools"
 #   postgresql9_dict_int "activeadvocacytools"
   postgresql9_dict_xsyn "activeadvocacytools"
