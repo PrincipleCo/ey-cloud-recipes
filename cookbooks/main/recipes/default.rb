@@ -123,55 +123,54 @@
 # uncomment to include the Postgres Maintenance recipe
 #include_recipe "postgresql_maintenance"
 
-#enable Extension modules for a given Postgresql database
-# if ['solo','db_master', 'db_slave'].include?(node[:instance_role])
-  # Extensions that support Postgres >= 9.0
-  # postgresql9_autoexplain "dbname"
-  # postgresql9_btree_gin "dbname"
-  # postgresql9_btree_gist "dbname"
-  # postgresql9_chkpass "dbname"
-  # postgresql9_citext "dbname"
-  # postgresql9_cube "dbname"
-  # postgresql9_dblink "dbname"
-  # postgresql9_dict_int "dbname"
-  # postgresql9_dict_xsyn "dbname"
-  # postgresql9_earthdistance "dbname"
-  # postgresql9_fuzzystrmatch "dbname"
-  # postgresql9_hstore "dbname"
-  # postgresql9_intarray "dbname"
-  # postgresql9_isn "dbname"
-  # postgresql9_lo "dbname"
-  # postgresql9_ltree "dbname"
-  # postgresql9_pg_trgm "dbname"
-  # postgresql9_pgcrypto "dbname"
-  # postgresql9_pgrowlocks "dbname"
+# enable Extension modules for a given Postgresql database
+if ['solo','db_master', 'db_slave'].include?(node[:instance_role])
+#   Extensions that support Postgres >= 9.0
+#   postgresql9_autoexplain "activeadvocacytools"
+  postgresql9_btree_gin "activeadvocacytools"
+  postgresql9_btree_gist "activeadvocacytools"
+  postgresql9_chkpass "activeadvocacytools"
+  postgresql9_citext "activeadvocacytools"
+#   postgresql9_cube "activeadvocacytools"
+#   postgresql9_dblink "activeadvocacytools"
+#   postgresql9_dict_int "activeadvocacytools"
+  postgresql9_dict_xsyn "activeadvocacytools"
+  postgresql9_earthdistance "activeadvocacytools"
+  postgresql9_fuzzystrmatch "activeadvocacytools"
+  postgresql9_hstore "activeadvocacytools"
+#   postgresql9_intarray "activeadvocacytools"
+#   postgresql9_isn "activeadvocacytools"
+#   postgresql9_lo "activeadvocacytools"
+  postgresql9_ltree "activeadvocacytools"
+  postgresql9_pg_trgm "activeadvocacytools"
+  postgresql9_pgcrypto "activeadvocacytools"
+  postgresql9_pgrowlocks "activeadvocacytools"
 
-  # PostGis 1.5 (use with versions 9.0, 9.1, 9.2 on 2009a/stable-v2)
-  # postgresql9_postgis "dbname"
+#   # PostGis 1.5 (use with versions 9.0, 9.1, 9.2 on 2009a/stable-v2)
+#   # postgresql9_postgis "activeadvocacytools"
 
-  # PostGis 2.1 (use with version 9.2 on 2009a/stable-v2 and all versions on 12.11/stable-v4)
-  # postgresql9_postgis2 "dbname"
+#   PostGis 2.1 (use with version 9.2 on 2009a/stable-v2 and all versions on 12.11/stable-v4)
+  postgresql9_postgis2 "activeadvocacytools"
 
-  # postgresql9_seg "dbname"
-  # postgresql9_sslinfo "dbname"
-  # postgresql9_tablefunc "dbname"
-  # postgresql9_test_parser "dbname"
-  # postgresql9_unaccent "dbname"
-  # postgresql9_uuid_ossp "dbname"
+#   # postgresql9_seg "activeadvocacytools"
+#   # postgresql9_sslinfo "activeadvocacytools"
+#   # postgresql9_tablefunc "activeadvocacytools"
+#   # postgresql9_test_parser "activeadvocacytools"
+#   # postgresql9_unaccent "activeadvocacytools"
+  postgresql9_uuid_ossp "activeadvocacytools"
 
+#   9.1 and 9.2 Extensions
+#   postgresql9_file_fdw "activeadvocacytools"
+  postgresql9_xml2 "activeadvocacytools"
 
-  # 9.1 and 9.2 Extensions
-  # postgresql9_file_fdw "dbname"
-  # postgresql9_xml2 "dbname"
+#   9.2 Extensions
+#   Note: pg_stat_statements requires a server restart to complete installation
+#   postgresql9_pg_stat_statements "activeadvocacytools"
 
-  # 9.2 Extensions
-  # Note: pg_stat_statements requires a server restart to complete installation
-  # postgresql9_pg_stat_statements "dbname"
-
-  # Admin-Level Contribs
-  # postgresql9_pg_buffercache "postgres"
-  # postgresql9_pg_freespacemap "postgres"
-# end
+#   Admin-Level Contribs
+#   postgresql9_pg_buffercache "postgres"
+#   postgresql9_pg_freespacemap "postgres"
+end
 
 #uncomment to include the motd customization related to the environment
 #include_recipe "env_motd"
